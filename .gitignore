@@ -1,0 +1,39 @@
+## LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.xdv
+
+## BibTeX / Biber
+*.bib.bak
+
+## Latexmk
+.latexmk_fdb
+
+## Editor artifacts
+.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+## OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Temporary files
+*~
+\#*\#
+*.swp
+*.swo

@@ -1,0 +1,443 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{Conejo2010}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=4283ec126a1c20ad3825b0d487fb2d80}{%
+           family={Conejo},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6705415f2b893cf4dd4d4f24354325c9}{%
+           family={Carrión},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f50d32de5cc3f3544fef3e015a919509}{%
+           family={Morales},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{fullhash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{fullhashraw}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{bibnamehash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{authorbibnamehash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{authornamehash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{authorfullhash}{8c86cbb68237c531b399ecff3939a59e}
+      \strng{authorfullhashraw}{8c86cbb68237c531b399ecff3939a59e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{isbn}{9781441974205}
+      \field{title}{Decision Making Under Uncertainty in Electricity Markets}
+      \field{year}{2010}
+    \endentry
+    \entry{Andersen2010}{inproceedings}{}{}
+      \name{author}{8}{}{%
+        {{hash=14bfd5a530cdb4a39e4f3ac3d5833d5d}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={P.\bibnamedelimi B.},
+           giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0ecf05e9b9e741fffb83ae3bb0c3d19c}{%
+           family={Tr{æ}holt},
+           familyi={T\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=345dfeea2111685e9f19d00a725fa96b}{%
+           family={Marra},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=49e66394b05cc33f85699c080856f63f}{%
+           family={Poulsen},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8bb62be46ef8828d12b2b25720991258}{%
+           family={Binding},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d6fcf394f40f001c15ce8802e26fd15a}{%
+           family={Gantenbein},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=72e07ecb952b864c77d4d9eb163877ef}{%
+           family={Jansen},
+           familyi={J\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0c22270f5cbc3111fb206ad3068e416b}{%
+           family={Sundstroem},
+           familyi={S\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{38306f978997aad6a1c6d797560291ed}
+      \strng{fullhash}{4f59bec487a144eda2ed4789f7bf7deb}
+      \strng{fullhashraw}{4f59bec487a144eda2ed4789f7bf7deb}
+      \strng{bibnamehash}{38306f978997aad6a1c6d797560291ed}
+      \strng{authorbibnamehash}{38306f978997aad6a1c6d797560291ed}
+      \strng{authornamehash}{38306f978997aad6a1c6d797560291ed}
+      \strng{authorfullhash}{4f59bec487a144eda2ed4789f7bf7deb}
+      \strng{authorfullhashraw}{4f59bec487a144eda2ed4789f7bf7deb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE PES General Meeting}
+      \field{title}{Electric Vehicle Fleet Integration in the Danish EDISON Project: A Virtual Power Plant on the Island of Bornholm}
+      \field{year}{2010}
+      \field{pages}{200\bibrangedash 209}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/PES.2010.5589605
+      \endverb
+    \endentry
+    \entry{Muessel2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ff276847b7f5a3a0f0134956c79e9aab}{%
+           family={Muessel},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=abc4dfe68ec38267711c821d6ef1c95d}{%
+           family={Ruhnau},
+           familyi={R\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=94728f22cbaa4a4fc34351eaca4232e8}{%
+           family={Madlener},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{fullhash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{fullhashraw}{c33580d2b8ffc1913e66572df395a729}
+      \strng{bibnamehash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{authorbibnamehash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{authornamehash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{authorfullhash}{c33580d2b8ffc1913e66572df395a729}
+      \strng{authorfullhashraw}{c33580d2b8ffc1913e66572df395a729}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{iScience}
+      \field{number}{107816}
+      \field{title}{Accurate and Scalable Representation of Electric Vehicles in Energy System Models: A Virtual Storage-Based Aggregation Approach}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.1016/j.isci.2023.107816
+      \endverb
+    \endentry
+    \entry{Basaran2026}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=3e9c3fd2ecfdf6060ac043090291a29a}{%
+           family={Basaran},
+           familyi={B\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=aaf8ccc89c42335bd55b18121eb011d1}{%
+           family={Siano},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ff8f890c5cc2796f31dca8db6baddd36}{%
+           family={Abdelkader},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=205dde23a19a7b87b71f61a3761a6fb8}{%
+           family={Candan},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=aee0aca9f9a416853e4cded3ab5eba35}{%
+           family={Kivi},
+           familyi={K\bibinitperiod},
+           given={M.\bibnamedelimi M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=464d4d1a557012a2874e2f3f83d46706}{%
+           family={Sakib},
+           familyi={S\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b2d59c44feb64583f5257866743c326d}{%
+           family={Arikusu},
+           familyi={A\bibinitperiod},
+           given={Y.\bibnamedelimi S.},
+           giveni={Y\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=8afb4c9cafa016d642db7e45956dbfa6}{%
+           family={Lazaroiu},
+           familyi={L\bibinitperiod},
+           given={G.\bibnamedelimi C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b092d40c13898a0f0968016c57c350e}
+      \strng{fullhash}{72373e53370614b56bdb0d447dcb7b52}
+      \strng{fullhashraw}{72373e53370614b56bdb0d447dcb7b52}
+      \strng{bibnamehash}{2b092d40c13898a0f0968016c57c350e}
+      \strng{authorbibnamehash}{2b092d40c13898a0f0968016c57c350e}
+      \strng{authornamehash}{2b092d40c13898a0f0968016c57c350e}
+      \strng{authorfullhash}{72373e53370614b56bdb0d447dcb7b52}
+      \strng{authorfullhashraw}{72373e53370614b56bdb0d447dcb7b52}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Energy}
+      \field{number}{139983}
+      \field{title}{A Comprehensive Survey of Distributed Optimization Methods and Technological Enablers for Sustainable Energy Communities}
+      \field{year}{2026}
+      \verb{doi}
+      \verb 10.1016/j.energy.2026.139983
+      \endverb
+    \endentry
+    \entry{Boyd2011}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=fdb760b740da8a080df12615e128118d}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=72c51562098c9e6ca1b38d117329218a}{%
+           family={Parikh},
+           familyi={P\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b405e4bc8048a427c2a14a29c9742d5e}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=92ad2aa46ee810fc7a6c5eb0f0e5965d}{%
+           family={Peleato},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=13ed44c5cacd708185ac02a38c46300e}{%
+           family={Eckstein},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{5db2048f35ed75805079654a866ae404}
+      \strng{fullhash}{5db2048f35ed75805079654a866ae404}
+      \strng{fullhashraw}{5db2048f35ed75805079654a866ae404}
+      \strng{bibnamehash}{5db2048f35ed75805079654a866ae404}
+      \strng{authorbibnamehash}{5db2048f35ed75805079654a866ae404}
+      \strng{authornamehash}{5db2048f35ed75805079654a866ae404}
+      \strng{authorfullhash}{5db2048f35ed75805079654a866ae404}
+      \strng{authorfullhashraw}{5db2048f35ed75805079654a866ae404}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations and Trends in Machine Learning}
+      \field{number}{1}
+      \field{title}{Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers}
+      \field{volume}{3}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 122}
+      \range{pages}{122}
+      \verb{doi}
+      \verb 10.1561/2200000016
+      \endverb
+    \endentry
+    \entry{Erseghe2014}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=32c6d68d5ce21cf68a61a6a73a4e2152}{%
+           family={Erseghe},
+           familyi={E\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{fullhash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{fullhashraw}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{bibnamehash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{authorbibnamehash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{authornamehash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{authorfullhash}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \strng{authorfullhashraw}{32c6d68d5ce21cf68a61a6a73a4e2152}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Systems}
+      \field{number}{5}
+      \field{title}{Distributed Optimal Power Flow Using ADMM}
+      \field{volume}{29}
+      \field{year}{2014}
+      \field{pages}{2370\bibrangedash 2380}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/TPWRS.2014.2306495
+      \endverb
+    \endentry
+    \entry{Wasti2020}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=834f5ac2fc1aa2f9c55d4542f5e42a55}{%
+           family={Wasti},
+           familyi={W\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f9d469ea7166d1dbafdb849a83844a66}{%
+           family={Ubiratan},
+           familyi={U\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5ec149a60c377c1ab679a2446ee35fbd}{%
+           family={Afshar},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4e1235e439472cc8a54b3305dc3e0ad0}{%
+           family={Disfani},
+           familyi={D\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{fullhash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{fullhashraw}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{bibnamehash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{authorbibnamehash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{authornamehash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{authorfullhash}{47f31e598b3820fc53549e4a60ab1e3b}
+      \strng{authorfullhashraw}{47f31e598b3820fc53549e4a60ab1e3b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Energy Symposium: MIT A+B}
+      \field{number}{24}
+      \field{title}{Distributed Dynamic Economic Dispatch using Alternating Direction Method of Multipliers}
+      \field{volume}{24}
+      \field{year}{2020}
+      \field{pages}{2345\bibrangedash 2356}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.46855/energy-proceedings-6985
+      \endverb
+    \endentry
+    \entry{Sun2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=abe54d71a8749221df19e0ecf976f01c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c0ae0714c4e3945709e90b1c66b61070}{%
+           family={An},
+           familyi={A\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ff38b98d2dc65002f66d028a85b9d58d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ad8f58d196bf0334ce91123bd6ad23e2}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d118fdaecd16d573b5e02087933c4d8a}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{fullhash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{fullhashraw}{4840d5cb777f91a4923fed42d072f822}
+      \strng{bibnamehash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{authorbibnamehash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{authornamehash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{authorfullhash}{4840d5cb777f91a4923fed42d072f822}
+      \strng{authorfullhashraw}{4840d5cb777f91a4923fed42d072f822}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Systems Science \& Control Engineering}
+      \field{title}{An Overview of Distributed Economic Dispatch of Microgrids: Advances and Challenges}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1080/21642583.2025.2467077
+      \endverb
+    \endentry
+    \entry{Sortomme2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=afcd2b6341b70c0b3481dc5debba93ef}{%
+           family={Sortomme},
+           familyi={S\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4af85c6212fd51acacfd7c5b45a6741d}{%
+           family={El-Sharkawi},
+           familyi={E\bibinithyphendelim S\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{fullhash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{fullhashraw}{dada729c75a4740a7d754ab4756367b2}
+      \strng{bibnamehash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{authorbibnamehash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{authornamehash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{authorfullhash}{dada729c75a4740a7d754ab4756367b2}
+      \strng{authorfullhashraw}{dada729c75a4740a7d754ab4756367b2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Smart Grid}
+      \field{number}{1}
+      \field{title}{Optimal Scheduling of Vehicle-to-Grid Energy and Ancillary Services}
+      \field{volume}{3}
+      \field{year}{2012}
+      \true{nocite}
+      \field{pages}{351\bibrangedash 359}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TSG.2011.2164099
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

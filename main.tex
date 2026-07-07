@@ -1,0 +1,407 @@
+% ==============================================================================
+%  Research Project Proposal Template
+%  Target length: ~5 pages (excluding bibliography and project plan)
+% ==============================================================================
+\documentclass[12pt, a4paper]{article}
+
+% --- Encoding & fonts ---------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newpxtext}           % Palatino-style with full glyph coverage
+\usepackage{newpxmath}
+\usepackage{microtype}
+
+% --- Page layout --------------------------------------------------------------
+\usepackage[
+  a4paper,
+  top=2.5cm, bottom=2.7cm,
+  left=3.0cm,  right=3.0cm,
+  headheight=15pt
+]{geometry}
+
+% --- Colors (restrained palette) ----------------------------------------------
+\usepackage{xcolor}
+\definecolor{heading}{RGB}{18, 28, 55}     % near-black navy
+\definecolor{rule}{RGB}{170, 170, 170}     % light gray
+\definecolor{hint}{RGB}{110, 110, 110}     % gray for guidance text
+
+% --- Section headings ---------------------------------------------------------
+% \bfseries only — bold small caps are not a real optical cut in newpxtext
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{heading}}
+  {\thesection.}
+  {0.5em}
+  {}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\itshape}
+  {\thesubsection}
+  {0.5em}
+  {}
+
+\titlespacing*{\section}{0pt}{1.6em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1em}{0.2em}
+
+% --- Header & footer ----------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{hint}\textit{Research Project Proposal}}
+\fancyhead[R]{\small\color{hint}\textit{\proposalauthor}}
+\fancyfoot[C]{\small\color{hint}\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\headrule}{{\color{rule}\hrule width\headwidth height 0.35pt}}
+
+% --- Hyperlinks ---------------------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = heading,
+  citecolor  = heading,
+  urlcolor   = heading,
+}
+
+% --- Bibliography (biblatex + biber) -----------------------------------------
+\usepackage{csquotes}
+\usepackage[
+  backend  = biber,
+  style    = numeric,
+  sorting  = none,   % citations numbered in order of appearance
+  maxnames = 6,      % show up to 6 authors before truncating to et al.
+  minnames = 1,
+  doi      = true,   % keep DOIs so online-only sources remain locatable
+  isbn     = false,
+  url      = false,
+  eprint   = false,
+]{biblatex}
+\addbibresource{references.bib}
+
+% --- Tables & lists -----------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- Paragraph spacing --------------------------------------------------------
+\usepackage{parskip}
+\setlength{\parskip}{0.5em}
+
+% --- Placeholder text (remove \usepackage{lipsum} once content is written) ---
+\usepackage{lipsum}
+
+% --- Guidance boxes (subtle left-border style) --------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\newtcolorbox{guidancebox}{
+  enhanced,
+  frame hidden,
+  borderline west = {1.5pt}{0pt}{rule},
+  colback         = white,
+  left = 8pt, right = 0pt, top = 1pt, bottom = 1pt,
+  fontupper       = \small\itshape\color{hint},
+}
+
+% ==============================================================================
+%  PROPOSAL METADATA — fill in before writing
+% ==============================================================================
+\newcommand{\proposaltitle}{A Comparative Study of Centralized and ADMM-Based Distributed Economic Dispatch with Electric Vehicle Fleet Constraints}
+\newcommand{\proposalauthor}{Ashish George Jacob, Bilal Khan}
+\newcommand{\proposalaffiliation}{Department, Carl von Ossietzky Universität Oldenburg}
+\newcommand{\proposalsupervisor}{Rico Schrage, M.Sc}
+\newcommand{\proposalcourse}{Research Project}
+\newcommand{\proposaldate}{\today}
+
+\AtBeginDocument{%
+  \hypersetup{pdftitle={\proposaltitle}, pdfauthor={\proposalauthor}}%
+}
+
+% 
+% ==============================================================================
+%  PROPOSAL MAIN CONTENT — keep it <= 5 pages
+% ==============================================================================
+\begin{document}
+\thispagestyle{empty}
+%
+% --- Title block --------------------------------------------------------------
+\begin{center}
+  {\small\scshape\color{hint} \proposalaffiliation}\\[0.3em]
+  {\small\color{hint} \proposalcourse}\\[1.8em]
+  {\Large\bfseries\color{heading} \proposaltitle}\\[1.0em]
+  {\normalsize \proposalauthor}\\[0.4em]
+  {\small\color{hint}
+    Supervisor:~\proposalsupervisor
+    \enspace\textperiodcentered\enspace
+    \proposaldate}\\[1.2em]
+  {\color{rule}\hrule}
+\end{center}
+%
+\vspace{0.6em}
+%
+\section{Introduction}
+%
+
+%
+
+The increasing penetration of Electric Vehicles (EVs) is transforming modern power systems by introducing flexible and distributed electrical loads. These EV fleets can participate in grid operation by adapting their charging behavior in response to system-level requirements. Economic Dispatch (ED) is a fundamental optimization problem in power systems, aiming to determine the optimal allocation of generation resources while minimizing operational cost under system constraints. Traditionally, ED problems are solved using centralized optimization approaches, where a single controller has access to complete system information and computes a globally optimal solution.
+
+Rather than modeling every EV individually, this work considers aggregated EV fleets. Fleet-based aggregation significantly reduces the dimensionality of the optimization problem while preserving the dominant flexibility characteristics of large EV populations. Furthermore, fleet aggregation reflects practical charging infrastructures, where aggregators coordinate many individual vehicles and participate in electricity markets on their behalf.
+
+However, as EV integration increases, centralized approaches face challenges related to scalability, communication requirements, and computational complexity. This has motivated the use of distributed optimization methods, which decompose the global problem into smaller subproblems that can be solved locally while coordinating to achieve a global consensus. In particular, the Alternating Direction Method of Multipliers (ADMM) has emerged as a widely used framework for distributed optimization in energy systems due to its strong convergence properties and scalability.
+
+This study investigates a linear multi-period Economic Dispatch formulation incorporating EV fleet constraints, such as charging limits, charging dynamics, and state-of-charge requirements. A centralized Linear Programming (LP) formulation is used as the benchmark, while a distributed ADMM-based approach is implemented for comparison. Rather than comparing optimality itself, the study evaluates whether the distributed formulation reproduces the centralized optimum while comparing computational performance, convergence behavior, and scalability under EV-constrained operating conditions.
+
+The results aim to provide insights into the suitability of distributed optimization methods for EV-integrated power systems and highlight the trade-offs between centralized and distributed solution approaches for large-scale Economic Dispatch problems.
+
+%
+\section{Literature Overview}
+
+Economic Dispatch (ED) is one of the fundamental optimization problems in power systems and has been extensively studied in both traditional and modern electricity networks. The objective of ED is to determine an 
+optimal allocation of generation resources while satisfying operational constraints and minimizing overall operational cost. Classical ED formulations are commonly expressed as constrained optimization problems in which generation-demand balance and unit operating limits must be maintained \parencite{Conejo2010}. Historically, centralized optimization approaches have dominated ED due to their ability to efficiently obtain globally optimal solutions when complete system information is available. These formulations are often solved using deterministic optimization techniques such as LP and convex optimization methods.
+
+However, the increasing decentralization of energy systems and the rapid penetration of EVs introduce new operational challenges that are not sufficiently captured by conventional ED formulations. 
+EV fleets represent highly flexible electrical loads whose charging behavior can significantly affect power system operation. Their integration into energy systems requires accounting for additional constraints such as 
+charging power limitations, temporal availability, and energy requirements. The large scale integration of EVs has therefore motivated increasing research into coordinated charging strategies and system level management approaches.
+
+Early work on EV integration focused primarily on coordinated charging and vehicle-to-grid (V2G) services. For example, the Danish EDISON project investigated how large EV fleets could be coordinated to support grid operation through communication and distributed control infrastructures while simultaneously benefiting users and grid operators \parencite{Andersen2010}. Such studies highlight the growing importance of treating EVs as active and coordinated components of energy systems rather than passive electrical loads.
+
+More recent literature emphasizes the importance of accurate EV fleet representation in optimization problems. In particular, studies have shown that naïve aggregation of EV charging behavior may substantially overestimate system flexibility and lead to unrealistic conclusions regarding operational performance. To address this challenge, scalable aggregation approaches have been proposed to represent EV fleets more accurately while maintaining computational tractability \parencite{Muessel2023}. These findings are particularly relevant for optimization based ED formulations, as modeling assumptions regarding EV behavior may significantly influence optimization results and computational performance.
+
+Alongside the increased complexity of modern energy systems, the suitability of centralized optimization has increasingly been questioned. As distributed energy resources, flexible loads, and multi-agent architectures become more prevalent, centralized approaches may face challenges related to scalability, communication burden, and privacy concerns. Consequently, distributed optimization has emerged as an important paradigm for energy system management. Recent reviews highlight that distributed optimization methods are particularly suitable for sustainable energy communities and smart grid applications due to their ability to preserve local autonomy while achieving near-centralized performance \parencite{Basaran2026}. In particular, distributed methods enable local decision-making while coordinating globally feasible solutions through iterative communication between agents.
+
+Among distributed optimization approaches, the Alternating Direction Method of Multipliers (ADMM) has gained considerable attention due to its decomposition capabilities and convergence properties in large-scale optimization settings. Boyd et al. \parencite{Boyd2011} established ADMM as a general framework for distributed convex optimization by decomposing large optimization problems into smaller subproblems coordinated through consensus constraints. Within power systems, ADMM-based approaches have been successfully applied to problems such as optimal power flow and distributed Economic Dispatch, demonstrating strong scalability and near-centralized performance \parencite{Erseghe2014, Wasti2020}. Recent reviews further highlight ADMM as one of the most promising distributed optimization techniques for modern decentralized energy systems due to its ability to balance computational efficiency, privacy preservation, and local autonomy \parencite{Basaran2026, Sun2025}.
+
+Overall, existing literature provides strong foundations for Economic Dispatch, EV integration, and distributed optimization independently. However, there remains limited understanding of how EV fleet modeling assumptions influence the behavior and performance of centralized and distributed optimization approaches within a linear Economic Dispatch framework. This motivates a more focused investigation into the interaction between EV fleet representation and optimization paradigm selection.
+%
+\section{Research Gap}
+% 
+Despite extensive research on Economic Dispatch (ED) and its numerous extensions, several important aspects remain insufficiently addressed when considering modern EV-integrated power systems and distributed optimization frameworks. 
+
+Classical ED formulations are well-established and typically assume a centralized decision-making structure with full 
+system observability \parencite{Conejo2010}. While these approaches are computationally efficient for moderately sized systems, they become increasingly less practical in modern energy systems characterized by distributed energy resources, flexible loads, and large-scale Electric Vehicle (EV) integration.
+
+Recent research has introduced distributed optimization methods as scalable alternatives to centralized approaches. In particular, the Alternating Direction Method of Multipliers (ADMM) has been widely applied to energy system optimization problems due to its ability to decompose large-scale problems into smaller subproblems while maintaining convergence guarantees \parencite{Boyd2011, Erseghe2014}. Furthermore, survey literature highlights the increasing relevance of distributed optimization in sustainable energy communities, where scalability, privacy, and modularity are key requirements \parencite{Basaran2026, Sun2025}.
+
+In parallel, EV fleets are increasingly being incorporated into power system optimization models. However, existing literature often assumes simplified or idealized representations of EV behavior, including perfect aggregation or deterministic availability. While EV modeling approaches have improved in terms of scalability and computational tractability, there remains a gap between realistic EV fleet representations and their integration into optimization frameworks \parencite{Muessel2023}. In particular, the impact of EV fleet modeling constraints on optimization performance and algorithmic behavior is not yet fully understood.
+
+Although both distributed optimization techniques and EV-integrated ED formulations have been extensively studied independently, relatively few works systematically analyze their interaction. Specifically, there is limited understanding of how the inclusion of EV fleet constraints influences the comparative performance of centralized and distributed optimization approaches within a linear ED framework. 
+
+This gap motivates a focused investigation into a linear Economic Dispatch formulation with EV fleet constraints, aiming to evaluate and compare centralized and distributed optimization methods under consistent modeling assumptions. The study particularly aims to assess how EV-related constraints affect solution quality, convergence behavior, and computational scalability across both optimization paradigms.
+
+%
+\section{Research Questions}
+%
+
+This research investigates the formulation and solution of a linear multi-period Economic Dispatch (ED) problem incorporating Electric Vehicle (EV) fleet constraints. A centralized Linear Programming (LP) formulation serves as the benchmark solution, while the Alternating Direction Method of Multipliers (ADMM) is used as the distributed optimization approach. The study is guided by the following research questions:
+
+\textbf{RQ1:} How can a multi-period linear Economic Dispatch problem incorporating EV fleet charging dynamics and state-of-charge constraints be formulated while preserving convexity?
+
+\textbf{RQ2:} How can the proposed Economic Dispatch problem be decomposed into a distributed optimization framework using ADMM?
+
+\textbf{RQ3:} Can the distributed ADMM formulation reproduce the centralized LP solution while maintaining acceptable computational performance and scalability?
+
+\textbf{RQ4:} How do different EV fleet sizes and charging availability patterns influence the performance of the centralized and distributed optimization approaches?
+
+
+%
+\section{Methodology}
+%
+
+%
+This study follows a computational optimization approach to analyze and compare centralized and distributed solution methods for a linear Economic Dispatch (ED) problem incorporating Electric Vehicle (EV) fleet constraints. The methodology consists of four main components: problem formulation, centralized optimization, distributed optimization, and evaluation.
+
+\subsection{Economic Dispatch Formulation}
+
+The proposed Economic Dispatch (ED) problem is formulated as a multi-period linear optimization problem to capture the temporal characteristics of EV fleet charging. Unlike the classical single-period ED formulation, the optimization is performed over a discrete time horizon $t = 1,\ldots,T$, allowing the charging decisions of the EV fleet to evolve over time.
+
+The objective is to minimize the total generation cost over the scheduling horizon,
+
+\begin{equation}
+\min \sum_{t=1}^{T}\sum_{i=1}^{N_G} C_i(P_{i,t}),
+\end{equation}
+
+where $P_{i,t}$ denotes the power generated by generator $i$ at time step $t$ and $C_i(\cdot)$ is its linear generation cost.
+
+The optimization is subject to the following constraints.
+
+\subsubsection*{Power Balance}
+
+At every time step, total generation must satisfy the system demand and the charging demand of the EV fleet,
+
+\begin{equation}
+\sum_{i=1}^{N_G} P_{i,t}
+-
+P^{EV}_{t}
+=
+D_t,
+\end{equation}
+
+where $D_t$ denotes the system demand and $P^{EV}_{t}$ represents the aggregated charging power consumed by the EV fleet.
+
+\subsubsection*{Generator Limits}
+
+Each generator operates within its minimum and maximum power limits,
+
+\begin{equation}
+P_i^{\min}
+\le
+P_{i,t}
+\le
+P_i^{\max}.
+\end{equation}
+
+\subsubsection*{EV Fleet State-of-Charge Dynamics}
+
+The aggregated EV fleet is modeled as an energy storage system whose state of charge evolves according to
+
+\begin{equation}
+SOC_{t+1}
+=
+SOC_t
++
+\eta_c P^{EV}_t \Delta t,
+\end{equation}
+
+where $SOC_t$ denotes the fleet state of charge at time $t$, $\eta_c$ is the charging efficiency, and $\Delta t$ is the duration of one time step.
+
+The state of charge is constrained by
+
+\begin{equation}
+SOC_{\min}
+\le
+SOC_t
+\le
+SOC_{\max}.
+\end{equation}
+
+\subsubsection*{Departure State-of-Charge Constraint}
+
+To ensure that the EV fleet satisfies user charging requirements, a minimum state of charge is enforced before the scheduled departure time,
+
+\begin{equation}
+SOC_{t_{\mathrm{dep}}}
+\ge
+SOC_{\mathrm{req}},
+\end{equation}
+
+where $t_{\mathrm{dep}}$ denotes the fleet departure time and $SOC_{\mathrm{req}}$ is the required minimum state of charge.
+
+\subsection{Centralized Optimization Approach}
+
+The centralized approach solves the full ED problem using a Linear Programming (LP) solver. All system variables and constraints are aggregated into a single optimization problem and solved using a standard deterministic solver. This solution serves as the benchmark for comparison with the distributed method.
+
+\subsection{Distributed Optimization Approach (ADMM)}
+
+The distributed optimization model is based on the Alternating Direction Method of Multipliers (ADMM). The global ED problem is decomposed into subproblems corresponding to individual agents (e.g., generators and EV fleet aggregator). Each agent solves a local optimization problem and coordinates through consensus constraints.
+
+The ADMM iterations follow:
+
+\[
+x^{k+1} := \arg\min_x \left( f(x) + \frac{\rho}{2} \|x - z^k + u^k\|^2 \right)
+\]
+
+\[
+z^{k+1} := \arg\min_z \left( g(z) + \frac{\rho}{2} \|x^{k+1} - z + u^k\|^2 \right)
+\]
+
+\[
+u^{k+1} := u^k + x^{k+1} - z^{k+1}
+\]
+
+where $x$ represents local decision variables, $z$ is the consensus variable, and $u$ is the dual variable. The penalty parameter $\rho$ controls convergence behavior.
+In the proposed formulation, each conventional generator is modeled as an independent optimization agent, while the aggregated EV fleet forms an additional agent. These agents solve their local optimization problems independently while coordinating through the global power balance constraint, which acts as the consensus constraint within the ADMM framework. Only the variables required to satisfy this shared constraint are exchanged between agents, preserving local autonomy while enabling convergence toward the centralized optimum.
+
+\subsection{Evaluation Methodology}
+
+The performance of both optimization approaches is evaluated using the following metrics:
+
+\begin{itemize}
+    \item \textbf{Correctness:} Verification that the distributed ADMM solution converges to the same optimal objective value and satisfies the same constraints as the centralized LP benchmark.
+    \item \textbf{Computational performance:} Runtime and computational effort required by each optimization approach.
+    \item \textbf{Convergence behavior:} Number of ADMM iterations required to satisfy the convergence criteria.
+    \item \textbf{Scalability:} Performance variation under increasing EV fleet sizes and system demand levels.
+\end{itemize}
+
+\subsection{Simulation Setup}
+
+The optimization framework will be implemented using suitable numerical optimization tools. A centralized Linear Programming (LP) solver will be used to obtain the benchmark solution, while the distributed optimization approach will be implemented using the Alternating Direction Method of Multipliers (ADMM).
+
+Simulations will be carried out over a multi-period scheduling horizon using an aggregated EV fleet model represented by its charging power and aggregate state of charge. This aggregation provides a computationally tractable representation of large EV populations while preserving the operational flexibility required for Economic Dispatch studies.
+
+The aggregated EV fleet model incorporates predefined charging availability windows, charging limits, battery capacity, and departure state-of-charge requirements. Different fleet sizes and loading conditions will be evaluated to compare the scalability and convergence characteristics of the centralized and distributed optimization approaches.
+
+%
+% ==============================================================================
+%  APPENDIX — not part of the 5 page limit
+% ==============================================================================
+\appendix
+%
+%  OPTIONAL — remove this entire section for individual projects
+\section{\texorpdfstring{Division of Labor \normalfont\small\itshape(group projects only)}{Division of Labor (group projects only)}}
+
+
+
+\begin{center}
+\begin{tabular}{@{} p{5.8cm} p{3.8cm} p{3.8cm} @{}}
+  \toprule
+  \textbf{Task} & \textbf{Lead} & \textbf{Support} \\
+  \midrule
+  
+  Literature search \& review & Ashish George Jacob & Bilal Khan \\
+  Research gap formulation & Ashish George Jacob & Bilal Khan \\
+  
+  Research questions definition & Ashish George Jacob & Bilal Khan \\
+  Problem formulation (ED model) & Ashish George Jacob & Bilal Khan \\
+  
+  Centralized optimization implementation & Bilal Khan & Ashish George Jacob \\
+  Distributed ADMM implementation & Bilal Khan & Ashish George Jacob \\
+  
+  Simulation design \& execution & Bilal Khan & Ashish George Jacob \\
+  Result analysis \& evaluation & Bilal Khan & Ashish George Jacob \\
+  
+  Final editing \& submission & Ashish George Jacob & Bilal Khan \\
+  
+  \bottomrule
+\end{tabular}
+\end{center}
+
+
+% ==============================================================================
+\section{Project Plan}
+% ==============================================================================
+
+
+
+\begin{center}
+\begin{tabular}{@{} l l c p{5.5cm} @{}}
+  \toprule
+  \textbf{Start} & \textbf{End} & \textbf{Week(s)} & \textbf{Deliverables / Milestones} \\
+  \midrule
+  31 Mar 2026 & 08 Apr 2026 & 1\,--\,2 & Initial meeting with supervisor; introduction to Research Project; discussion of potential topics including Economic Dispatch and EV integration. Initial agreement on a semester-scale project timeline (3--4 months). Initial direction toward algorithmic comparison for Economic Dispatch. \\
+
+  09 Apr 2026 & 21 Apr 2026 & 3\,--\,4 & Refinement of research scope based on supervisor feedback. Exploration of nonlinear/metaheuristic approaches, later deemed too complex for project scope. \\
+
+  22 Apr 2026 & 11 May 2026 & 5\,--\,6 & Scope adjustment toward linear Economic Dispatch formulation with EV-related constraints. \\
+
+  12 May 2026 & 20 May 2026 & 7 & Shift toward comparative analysis between centralized and distributed optimization approaches. \\
+
+  21 May 2026 & 30 May 2026 & 8\,--\,9 & Finalization of research direction: linear ED with EV fleet constraints and centralized LP vs distributed ADMM comparison. \\
+
+  06 Jun 2026 & 06 Jun 2026 & 10 & Finalised literature list and integration into proposal. \\
+
+  08 Jun 2026 & 08 Jun 2026 & 10 & Submission of Research Project proposal. \\
+
+  08 Jul 2026 & 08 Jul 2026 & 10 & Submission of Research Project proposal with updates. \\
+
+  09 Jun 2026 & 08 Sep 2026 & 11\,--\,22 & Implementation phase: model formulation, centralized solver implementation, ADMM implementation, simulation studies, performance evaluation, and final report writing. \\
+
+  \bottomrule
+\end{tabular}
+\end{center}
+
+
+% ==============================================================================
+%  Bibliography
+% ==============================================================================
+\clearpage
+\nocite{Sortomme2012}
+\printbibliography[heading=bibintoc]
+\end{document}
